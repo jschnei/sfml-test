@@ -6,6 +6,24 @@ main: main.o
 main.o: main.cpp
 	g++ -c main.cpp
 	
+keyboard: keyboard.o
+	g++ keyboard.o -o keyboard -lsfml-graphics -lsfml-window -lsfml-system
+
+keyboard.o: keyboard.cpp
+	g++ -c keyboard.cpp
+	
+keyserver: keyserver.o
+	g++ keyserver.o -o keyserver -lsfml-graphics -lsfml-window -lsfml-system -lsfml-network
+	
+keyserver.o: keyserver.cpp
+	g++ -c keyserver.cpp	
+
+keyclient: keyclient.o
+	g++ keyclient.o -o keyclient -lsfml-graphics -lsfml-window -lsfml-system -lsfml-network
+	
+keyclient.o: keyclient.cpp
+	g++ -c keyclient.cpp	
+	
 receiver: receiver.o
 	g++ receiver.o -o receiver -lsfml-graphics -lsfml-window -lsfml-system -lsfml-network
 	
